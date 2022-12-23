@@ -2,9 +2,16 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  background: -webkit-linear-gradient(to right, hsla(134, 30%, 57%, 0.534), hsla(193, 66%, 22%, 0.548)),url(../src/imagenes/lg.jpg);
+}
+.App-logo1 {
+  height: 20vmin;
+  pointer-events: none;
+  background: -webkit-linear-gradient(to right, hsla(134, 30%, 57%, 0.534), hsla(193, 66%, 22%, 0.548)),url(../src/imagenes/lg.jpg);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,8 +21,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #e7e6e6;
+
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,11 +36,50 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.galeria-port{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.imagen-port{
+  width: 24%;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.imagen-port > img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hover-galeria{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: scale(0);
+  background: rgba(106, 105, 107, 0.7);
+  transition: transform .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hover-galeria img{
+  width: 50px;
+}
+
+.hover-galeria p{
+  color: #fff;
+}
+
+.imagen-port:hover .hover-galeria{
+  transform: scale(1);
 }
